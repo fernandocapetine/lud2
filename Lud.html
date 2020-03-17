@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 
+<!– Importei as bibliotecas para utilizar a Realidade Aumentada –>
 
+<script src=”https://cdnjs.cloudflare.com/ajax/libs/aframe/0.7.1/aframe.min.js”></script>
 
-<script src=â€https://cdnjs.cloudflare.com/ajax/libs/aframe/0.7.1/aframe.min.jsâ€></script>
+<script src=”https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js”></script>
 
-<script src=â€https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.jsâ€></script>
+<!– Arquivo css inline para ocultar o modo debug que vem na própria biblioteca –>
 
-
-<style type=â€text/cssâ€>
+<style type=”text/css”>
 
 #arjsDebugUIContainer
 
@@ -29,23 +30,25 @@ display: none; !important;
 
 <body>
 
-    
+    <!– Insiro a tag <a-scene>, é responsável por criar o cenário, toda estrutura deve estar dentro dela –>
+
     <a-scene>
 
-        
-        <a-marker-camera preset=â€™customâ€™ type=â€™patternâ€™ url=â€™https://fernandocapetine.github.io/big-m.pattâ€™>
+        <!– importo o arquivo pattern-marker.patt, responsável por comparar nossa imagem, tudo o que estiver na entidade câmera será exibido quando apontar a câmera para a imagem gerada –>
 
-            
+        <a-marker-camera preset=’custom’ type=’pattern’ url=’https://fernandocapetine.github.io/big-m.patt’>
 
-            <a-image position=â€0 0.2 0â€³ rotation=â€270 0 0â€³ height=â€1â€³ width=â€1â€³ src=â€https://fernandocapetine.github.io/Imagem1.pngâ€></a-image>
+            <!– Insiro uma imagem que será mostrada, configurações: posição, rotação e tamanho da imagem –>
 
-            
+            <a-image position=”0 0.2 0? rotation=”270 0 0? height=”1? width=”1? src=”https://fernandocapetine.github.io/Imagem1.png”></a-image>
 
-            <a-image position=â€0 0.4 0â€³ rotation=â€270 0 0â€³ height=â€1â€³ width=â€1â€³ src=â€https://fernandocapetine.github.io/Imagem2.pngâ€></a-image>
+            <!– Insiro uma imagem que será mostrada, configurações: posição, rotação e tamanho da imagem –>
 
-        </a-marker-camera>
+            <a-image position=”0 0.4 0? rotation=”270 0 0? height=”1? width=”1? src=”https://fernandocapetine.github.io/Imagem2.png”></a-image>
 
-            <a-entity camera></a-entity>
+        </a-marker-wecam>
+
+            <a-entity webcam></a-entity>
 
     </a-scene>
 
